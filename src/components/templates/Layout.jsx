@@ -5,7 +5,7 @@ export default function Layout({ children, title }) {
   return (
     <>
       <Header title={title} />
-      <main> {children} </main>
+      <main className="mt-10 mb-10"> {children} </main>
       <Footer />
     </>
   )

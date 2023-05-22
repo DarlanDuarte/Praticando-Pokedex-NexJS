@@ -20,7 +20,7 @@ export default function Home({ initialPokemon }) {
   return (
     <>
       <Layout title={`Pokedex`}>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 container">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 container">
           {pokemon.results.map((poke, index) => (
             <Card key={index} pokemon={poke} index={index} />
           ))}
