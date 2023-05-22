@@ -30,7 +30,7 @@ export default function Home({ initialPokemon }) {
   console.log(pokemon)
   return (
     <>
-      <Layout title={`Pokedex`}>
+      <Layout title={`POKEDEX`}>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 container">
           {pokemon.results.map((poke, index) => (
             <Card key={index} pokemon={poke} index={index + offset} />
@@ -38,13 +38,15 @@ export default function Home({ initialPokemon }) {
         </div>
         <div className="container flex justify-between mt-5">
           <button
-            className="py-1 px-6 bg-slate-900 text-white font-semibold"
+            disabled={!pokemon.previous}
+            className="py-1 px-6 bg-slate-900 text-white font-semibold disabled:bg-red-900"
             onClick={() => renderizePage(pokemon.previous, false)}
           >
             {prevIcons()}
           </button>
           <button
-            className="py-1 px-6 bg-slate-900 text-white font-semibold"
+            disabled={!pokemon.next}
+            className="py-1 px-6 bg-slate-900 text-white font-semibold disabled:bg-red-900"
             onClick={() => renderizePage(pokemon.next, true)}
           >
             {nextIcons()}
